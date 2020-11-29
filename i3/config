@@ -54,7 +54,7 @@ bindsym $mod+Ctrl+m exec alacritty -e 'alsamixer'
 
 # Start Applications
 bindsym $mod+Ctrl+b exec alacritty -e 'bmenu'
-bindsym $mod+F2 exec firefox 
+bindsym $mod+F2 exec firefox
 bindsym $mod+F3 exec pcmanfm
 # bindsym $mod+F3 exec ranger
 bindsym $mod+Shift+F3 exec pcmanfm_pkexec
@@ -138,7 +138,7 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1: terminal 
+set $ws1 1: terminal
 set $ws2 2: web
 set $ws3 3: ide
 set $ws4 4: fm
@@ -180,6 +180,8 @@ bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 # Open applications on specific workspaces
 assign [class="Alacritty"] $ws1
 assign [class="firefox"] $ws2
+assign [class="Atom"] $ws3
+assign [class="jetbrains-idea"] $ws3
 assign [class="Pcmanfm"] $ws4
 assign [class="discord"] $ws5
 
@@ -211,6 +213,7 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
+for_window [class="jetbrains-toolbox"] floating enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -290,7 +293,7 @@ exec_always --no-startup-id fix_xcursor
 # Change the variable name at the place you want to match the color
 # of your alacritty like this:
 # [example]
-# If you want your bar to have the same background color as your 
+# If you want your bar to have the same background color as your
 # alacritty background change the line 362 from:
 # background #14191D
 # to:
@@ -349,7 +352,7 @@ bindsym $mod+m bar mode toggle
 
 
 # Set colors from Xresources
-# Change 'color7' and 'color2' to whatever colors you want i3 to use 
+# Change 'color7' and 'color2' to whatever colors you want i3 to use
 # from the generated scheme.
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources.
@@ -384,7 +387,7 @@ gaps outer -2
 # Smart gaps (gaps used if only more than one container on the workspace)
 smart_gaps on
 
-# Smart borders (draw borders around container only if it is not the only container on this workspace) 
+# Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
 
@@ -426,8 +429,11 @@ mode "$mode_gaps_outer" {
 }
 
 # Rofi settings
-bindsym $mod+p exec rofi -show run
-bindsym $mod+Tab exec rofi -show window
+bindsym $mod+p exec zsh -c "rofi -show run"
+bindsym $mod+Tab exec zsh -c "rofi -show window"
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Pulseaudio
+exec_always pulseaudio --start

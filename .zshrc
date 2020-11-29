@@ -101,3 +101,6 @@ source $ZSH/oh-my-zsh.sh
 # wal config
 wal -i ~/dotfiles/wallpaper.jpg &> /dev/null
 cat ~/.cache/wal/sequences
+
+# add jetbrains toolbox to path
+export PATH=$PATH:$HOME/Programs/
