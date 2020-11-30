@@ -101,7 +101,6 @@ alias dockerinit="systemctl start docker"
 
 
 # wal config
-# wal -i ~/dotfiles/wallpaper.jpg &> /dev/null
 cat ~/.cache/wal/sequences
 
 # add jetbrains toolbox to path
