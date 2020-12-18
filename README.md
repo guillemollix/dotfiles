@@ -1,2 +1,4 @@
-# dotfiles-i3
-Dotfiles for my latest Manjaro-i3 install
+# Dotfiles
+Dotfiles I use in my two main installs :
+ * Manjaro - i3
+ * ArcoLinux - Qtile
