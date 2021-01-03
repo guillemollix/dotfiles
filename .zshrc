@@ -97,7 +97,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias dotconfig="atom ~/dotfiles/"
 alias dockerinit="systemctl start docker"
-
+alias condainit='eval "$(/home/ollix/anaconda3/bin/conda shell.zsh hook)"'
+# School aliases
+alias spark-shell="/opt/apache-spark/bin/spark-shell"
 
 
 # wal config
