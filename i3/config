@@ -438,7 +438,8 @@ bindsym $mod+Tab exec zsh -c "rofi -show window"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Pulseaudio
-exec_always pulseaudio --start
+#exec_always pulseaudio -k
+#exec_always pulseaudio -D
 
 #Pywal
-wal -i ~/dotfiles/wallpaper.jpg &> /dev/null
+exec_always wal -i ~/dotfiles/wallpaper.jpg &> /dev/null
