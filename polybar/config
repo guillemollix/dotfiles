@@ -16,7 +16,7 @@ alert = ${xrdb:color4:#222}
 bonus = ${xrdb:color5:#222}
 
 [bar/i3bar]
-;monitor = ${env:MONITOR:HDMI-1}
+monitor = ${env:MONITOR:HDMI-0}
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -45,7 +45,7 @@ font-2 = FontAwesome:style=Regular:pixelsize=10
 
 modules-left = i3
 modules-center =
-modules-right = filesystemroot filesystemhome alsa pulseaudio memory cpu wlan eth date powermenu
+modules-right = filesystemroot filesystemhome pulseaudio memory cpu wlan eth date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -195,6 +195,8 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
+sink = alsa_output.usb-Logitech_PRO_X_000000000000-00.analog-stereo
+
 format-volume = <label-volume> <bar-volume>
 label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
@@ -218,6 +220,8 @@ bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
+
+click-right = pavucontrol
 
 [module/alsa]
 type = internal/alsa

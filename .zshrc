@@ -68,7 +68,7 @@ ZSH_THEME="maran"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git archlinux)
+plugins=(git archlinux jhipster)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,3 +107,7 @@ cat ~/.cache/wal/sequences
 
 # add jetbrains toolbox to path
 export PATH=$PATH:$HOME/Programs/
+
+#Change java version
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk"
+export PATH=$JAVA_HOME/bin:$PATH
